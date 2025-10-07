@@ -33,7 +33,7 @@ h3 {
 
 .main-container {
     width: 100%;
-    max-width: 360px;
+    max-width: 375px;
     margin: 0 auto;
     display: grid;
     gap: 20px;
@@ -190,6 +190,14 @@ input:checked+.slider::before {
     gap: 20px;
 }
 
+ .selection-bar{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+    }
+
 .selections button {
     font-family: "Noto Sans";
     color: hsl(227, 75%, 14%);
@@ -257,4 +265,33 @@ body.night-theme .extensions-bar img {
 body.night-theme .selections .active {
     background-color: hsl(3, 77%, 44%);
     color: hsl(200, 60%, 99%);
+}
+
+@media (min-width: 1440px) {
+    .extensions {
+        width: 100%;
+        max-width: 1290px;
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 0;
+        gap: 20px;
+        border-radius: 20px;
+    }
+
+    .main-container {
+        width: 100%;
+        max-width: 1330px;
+        margin: 0 auto;
+        display: grid;
+        gap: 20px;
+        grid-template-columns: repeat(3, 425px);
+        grid-template-rows: repeat(3, auto);
+    }
+
+    .selection-bar{
+        flex-direction: row;
+        width: 100%;
+        justify-content: space-between;
+        margin: 30px 0px 20px 0px;
+    }
 }
