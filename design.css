@@ -267,7 +267,7 @@ body.night-theme .selections .active {
     color: hsl(200, 60%, 99%);
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 1440px) {
     .extensions {
         width: 100%;
         max-width: 1290px;
@@ -295,4 +295,5 @@ body.night-theme .selections .active {
         margin: 30px 0px 20px 0px;
     }
 }
+
 
