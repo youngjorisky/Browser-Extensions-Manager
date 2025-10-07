@@ -1,3 +1,4 @@
+//ACTIVE OR NOT ACTIVE
 function selectionActive(selected) {
   document.querySelectorAll('.selections button').forEach(btn => {
     btn.classList.remove('active');
@@ -5,6 +6,7 @@ function selectionActive(selected) {
   selected.classList.add('active');
 }
 
+//NIGHT AND DAY
 const toggleButton = document.getElementById("toggle-btn");
 const imageChange = document.getElementById("toggle-icon");
 
