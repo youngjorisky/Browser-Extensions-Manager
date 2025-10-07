@@ -1,80 +1,230 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-
-  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Browser extensions manager UI</title>
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
+    <link rel="stylesheet" href="design.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Overpass:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Browser Extensions Manager</title>
 </head>
+
 <body>
+    <div class="all">
+        <div class="extensions">
+            <div class="extensions-bar">
+                <img src="./assets/images/logo.svg">
+                <button class="toggle-btn" id="toggle-btn">
+                    <img id="toggle-icon" src="./assets/images/icon-moon.svg">
+                </button>
+            </div>
+            <h1>Extensions List</h1>
+            <div class="selections">
+                <button class="options" onclick="selectionActive(this)">All</button>
+                <button class="options" onclick="selectionActive(this)">Active</button>
+                <button class="options" onclick="selectionActive(this)">Inactive</button>
+            </div>
+        </div>
+        <div class="main-container" id="main-container">
+            <div class ="children" class="devlens">
+                <div class="description">
+                    <img src="./assets/images/logo-devlens.svg">
+                    <div class="inline">
+                        <h3>DevLens</h3>
+                        <p>Qucikly inspect page layouts and visualize element boundaries</p>
+                    </div>
+                </div>
+                <div class="buttons">
+                    <button class="remove">Remove</button>
+                    <label class="switch">
+                        <input type="checkbox">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+            </div>
+            <div class ="children" class="stylespy">
+                <div class="description">
+                    <img src="./assets/images/logo-style-spy.svg">
+                    <div class="inline">
+                        <h3>StyleSpys</h3>
+                        <p>Instantly analyze and copy CSS from any webpage element.</p>
+                    </div>
+                </div>
+                <div class="buttons">
+                    <button class="remove">Remove</button>
+                    <label class="switch">
+                        <input type="checkbox">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+            </div>
+            <div class ="children" class="speedboost">
+                <div class="description">
+                    <img src="./assets/images/logo-speed-boost.svg">
+                    <div class="inline">
+                        <h3>SppedBoost</h3>
+                        <p>Optimizes browser resource usage to accelerate page loading.</p>
+                    </div>
+                </div>
+                <div class="buttons">
+                    <button class="remove">Remove</button>
+                    <label class="switch">
+                        <input type="checkbox">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+            </div>
+            <div class ="children" class="jsonwizard">
+                <div class="description">
+                    <img src="./assets/images/logo-json-wizard.svg">
+                    <div class="inline">
+                        <h3>JSONWizard</h3>
+                        <p>Formats, validates, and prettifies JSON responses in-browser.</p>
+                    </div>
+                </div>
+                <div class="buttons">
+                    <button class="remove">Remove</button>
+                    <label class="switch">
+                        <input type="checkbox">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+            </div>
+            <div class ="children" class="tabmaster pro">
+                <div class="description">
+                    <img src="./assets/images/logo-tab-master-pro.svg">
+                    <div class="inline">
+                        <h3>TabMaster Pro</h3>
+                        <p>Organizes browser tabs into groups and sessions.</p>
+                    </div>
+                </div>
+                <div class="buttons">
+                    <button class="remove">Remove</button>
+                    <label class="switch">
+                        <input type="checkbox">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+            </div>
+            <div class ="children" class="viewportbuddy">
+                <div class="description">
+                    <img src="./assets/images/logo-viewport-buddy.svg">
+                    <div class="inline">
+                        <h3>ViewportBuddy</h3>
+                        <p>Simulates various screen resolutions directly within the browser.</p>
+                    </div>
+                </div>
+                <div class="buttons">
+                    <button class="remove">Remove</button>
+                    <label class="switch">
+                        <input type="checkbox">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+            </div>
+            <div class ="children" class="markupnotes">
+                <div class="description">
+                    <img src="./assets/images/logo-markup-notes.svg">
+                    <div class="inline">
+                        <h3>Markup Notes</h3>
+                        <p>Enables annotation and notes directly onto webpages for collaborative debugging.</p>
+                    </div>
+                </div>
+                <div class="buttons">
+                    <button class="remove">Remove</button>
+                    <label class="switch">
+                        <input type="checkbox">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+            </div>
+            <div class ="children" class="gridguides">
+                <div class="description">
+                    <img src="./assets/images/logo-grid-guides.svg">
+                    <div class="inline">
+                        <h3>GridGuides</h3>
+                        <p>Overlay customizable grids and alignment guides on any webpage.</p>
+                    </div>
+                </div>
+                <div class="buttons">
+                    <button class="remove">Remove</button>
+                    <label class="switch">
+                        <input type="checkbox">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+            </div>
+            <div class ="children" class="palettepicker">
+                <div class="description">
+                    <img src="./assets/images/logo-palette-picker.svg">
+                    <div class="inline">
+                        <h3>Palette Picker</h3>
+                        <p>Instantly extracts color palettes from any webpage.</p>
+                    </div>
+                </div>
+                <div class="buttons">
+                    <button class="remove">Remove</button>
+                    <label class="switch">
+                        <input type="checkbox">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+            </div>
+            <div class ="children" class="linkchecker">
+                <div class="description">
+                    <img src="./assets/images/logo-link-checker.svg">
+                    <div class="inline">
+                        <h3>LinkChecker</h3>
+                        <p>Scans and highlights broken links on any page.</p>
+                    </div>
+                </div>
+                <div class="buttons">
+                    <button class="remove">Remove</button>
+                    <label class="switch">
+                        <input type="checkbox">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+            </div>
+            <div class ="children"  class="domsnapshot">
+                <div class="description">
+                    <img src="./assets/images/logo-dom-snapshot.svg">
+                    <div class="inline">
+                        <h3>DOM Snapshot</h3>
+                        <p>Capture and export DOM structures quickly.</p>
+                    </div>
+                </div>
+                <div class="buttons">
+                    <button class="remove">Remove</button>
+                    <label class="switch">
+                        <input type="checkbox">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+            </div>
+            <div class ="children" class="consoleplus">
+                <div class="description">
+                    <img src="./assets/images/logo-console-plus.svg">
+                    <div class="inline">
+                        <h3>ConsolePlus</h3>
+                        <p>Enhanced developer console with advanced filtering and logging.</p>
+                    </div>
+                </div>
+                <div class="buttons">
+                    <button class="remove">Remove</button>
+                    <label class="switch">
+                        <input type="checkbox">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
 
-  Extensions List
-
-  All
-  Active
-  Inactive
-
-  <!-- If you plan to use the JSON file to populate the data dynamically, you can delete the content below -->
-
-  DevLens
-  Quickly inspect page layouts and visualize element boundaries.
-  Remove
-
-  StyleSpy
-  Instantly analyze and copy CSS from any webpage element.
-  Remove
-
-  SpeedBoost
-  Optimizes browser resource usage to accelerate page loading.
-  Remove
-
-  JSONWizard
-  Formats, validates, and prettifies JSON responses in-browser.
-  Remove
-
-  TabMaster Pro
-  Organizes browser tabs into groups and sessions.
-  Remove
-
-  ViewportBuddy
-  Simulates various screen resolutions directly within the browser.
-  Remove
-
-  Markup Notes
-  Enables annotation and notes directly onto webpages for collaborative debugging.
-  Remove
-
-  GridGuides
-  Overlay customizable grids and alignment guides on any webpage.
-  Remove
-
-  Palette Picker
-  Instantly extracts color palettes from any webpage.
-  Remove
-
-  LinkChecker
-  Scans and highlights broken links on any page.
-  Remove
-
-  DOM Snapshot
-  Capture and export DOM structures quickly.
-  Remove
-
-  ConsolePlus
-  Enhanced developer console with advanced filtering and logging.
-  Remove
-
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
+    <script src="design.js"></script>
 </body>
 </html>
