@@ -16,8 +16,47 @@ toggleButton.addEventListener("click", () => {
 const allBtn = document.getElementById("all-button");
 const activeBtn = document.getElementById("active-button");
 const inactiveBtn = document.getElementById("inactive-button");
+const mainContainer = document.getElementById("main-container");
 
 let currentFilter = "all"; // default filter
+
+// 🧱 Load Extensions from JSON
+async function loadExtensions() {
+  try {
+    const response = await fetch("./extensions.json");
+    const data = await response.json();
+
+    data.forEach((ext) => {
+      const child = document.createElement("div");
+      child.classList.add("children");
+
+      child.innerHTML = `
+        <div class="description">
+          <img src="${ext.logo}" alt="${ext.name}">
+          <div class="inline">
+            <h3>${ext.name}</h3>
+            <p>${ext.description}</p>
+          </div>
+        </div>
+        <div class="buttons">
+          <button class="remove">Remove</button>
+          <label class="switch">
+            <input type="checkbox">
+            <span class="slider"></span>
+          </label>
+        </div>
+      `;
+
+      mainContainer.appendChild(child);
+    });
+
+    setupRemoveButtons();
+    setupCheckboxListeners();
+    updateView();
+  } catch (error) {
+    console.error("Error loading extensions:", error);
+  }
+}
 
 //Update View Function (always selects fresh children)
 function updateView() {
@@ -87,6 +126,4 @@ function setupCheckboxListeners() {
 }
 
 //Initialize
-setupRemoveButtons();
-setupCheckboxListeners();
-updateView();
+loadExtensions();
