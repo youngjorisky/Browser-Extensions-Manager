@@ -1,19 +1,45 @@
-html{
+/* === BASE STYLES === */
+html {
     box-sizing: border-box;
     font-family: "Noto Sans";
     background-color: hsl(217, 61%, 95%);
 }
-*, *::before, *::after{
+
+*,
+*::before,
+*::after {
     box-sizing: inherit;
 }
-.main-container{
+
+.all {
+    padding: 20px 0px;
+}
+
+h1 {
+    margin: 10px 0 0 0;
+    color: hsl(227, 75%, 14%);
+}
+
+h3 {
+    margin: 0;
+    color: hsl(227, 75%, 14%);
+}
+
+.inline p {
+    margin: 0;
+    color: hsl(226, 11%, 50%);
+    font-weight: 500;
+}
+
+.main-container {
     width: 100%;
     max-width: 375px;
     margin: 0 auto;
     display: grid;
     gap: 20px;
 }
-.main-container > * {
+
+.main-container>* {
     background-color: hsl(200, 60%, 99%);
     padding: 20px;
     display: flex;
@@ -22,31 +48,48 @@ html{
     border-radius: 20px;
     height: 200px;
 }
-.description img{
-    width: 90px;
-    height: 60px;
+
+.extensions {
+    width: 100%;
+    max-width: 375px;
+    margin: 0 auto 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
 }
-.description{
+
+.extensions-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 10px;
+    height: 65px;
+    padding: 10px;
+    width: 100%;
+    background-color: hsl(200, 60%, 99%);
+}
+
+.description {
     display: flex;
     flex-direction: row;
     gap: 20px;
-    padding: 0 20px 0 0;
+    padding-right: 20px;
 }
-h3{
-    margin: 0 0 0 0;
-    color: hsl(227, 75%, 14%);
+
+.description img {
+    width: 90px;
+    height: 60px;
 }
-.inline p{
-    margin: 0;
-    color: hsl(226, 11%, 50%);
-    font-weight: 500;
-}
-.inline{
+
+.inline {
     display: flex;
     flex-direction: column;
     gap: 10px;
 }
-button {
+
+/* === BUTTONS === */
+.main-container button {
     font-family: "Noto Sans";
     color: hsl(227, 75%, 14%);
     border: 1px solid hsl(0, 0%, 78%);
@@ -55,51 +98,218 @@ button {
     height: 40px;
     border-radius: 20px;
     font-weight: bold;
-    font-size: 1.0rem;
+    font-size: 1rem;
 }
-.buttons{
+
+.remove:hover {
+  background-color: hsl(3, 77%, 44%);
+  color: white;
+  border-color: hsl(3, 77%, 44%);
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+
+.buttons {
     margin-top: auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
+
+/* === SWITCH === */
 .switch {
-  position: relative;
-  display: inline-block;
-  width: 43px;
-  height: 23px;
+    position: relative;
+    display: inline-block;
+    width: 43px;
+    height: 23px;
 }
 
 .switch input {
-  opacity: 0;
-  width: 0;
-  height: 0;
+    opacity: 0;
+    width: 0;
+    height: 0;
 }
 
 .slider {
-  position: absolute;
-  cursor: pointer;
-  top: 0; left: 0;
-  right: 0; bottom: 0;
-  background-color: #ccc;
-  transition: 0.4s;
-  border-radius: 34px;
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: 0.4s;
+    border-radius: 34px;
 }
 
 .slider::before {
-  position: absolute;
-  content: "";
-  height: 16px; width: 17px;
-  left: 4px; bottom: 3.5px;
-  background-color: white;
-  transition: 0.4s;
-  border-radius: 50%;
+    position: absolute;
+    content: "";
+    height: 16px;
+    width: 17px;
+    left: 4px;
+    bottom: 3.5px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
 }
 
-input:checked + .slider {
-  background-color: hsl(3, 77%, 44%);
+input:checked+.slider {
+    background-color: hsl(3, 77%, 44%);
 }
 
-input:checked + .slider::before {
-  transform: translateX(19px);
+input:checked+.slider::before {
+    transform: translateX(19px);
+}
+
+/* === TOGGLE BUTTON === */
+.toggle-btn {
+    background-color: hsl(0, 0%, 90%);
+    border: none;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    width: 50px;
+    padding: 13px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+}
+
+.toggle-btn:hover {
+    transform: scale(1.1);
+    background-color: hsl(0, 0%, 70%);
+    transition: 0.5s;
+}
+
+.toggle-btn img {
+    width: 100%;
+}
+
+/* === SELECTION BUTTONS === */
+.selections {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.selection-bar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.selections button {
+    font-family: "Noto Sans";
+    color: hsl(227, 75%, 14%);
+    border: 1px solid hsl(0, 0%, 78%);
+    background-color: hsl(200, 60%, 99%);
+    padding: 20px;
+    height: 50px;
+    border-radius: 30px;
+    font-weight: 500;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.selections button:hover {
+    transform: scale(1.05);
+}
+
+/* FOCUS EFFECT */
+.buttons .remove:focus,
+.options:focus,
+.buttons .slider:focus,
+.extensions-bar .toggle-btn:focus {
+    outline: hsl(3, 77%, 44%);
+    outline-offset: 2px;
+}
+
+/* === NIGHT THEME === */
+body.night-theme {
+    width: 100vw;
+    height: 100%;
+    background: linear-gradient(180deg, #040918 0%, #091540 100%);
+}
+
+body.night-theme .toggle-btn {
+    background-color: hsl(226, 11%, 27%);
+}
+
+body.night-theme h1,
+body.night-theme h3 {
+    color: #f0f0f0;
+}
+
+body.night-theme .inline p {
+    color: #bbb;
+}
+
+body.night-theme .main-container>* {
+    background-color: hsl(226, 25%, 17%);
+    border: 1px solid hsl(226, 11%, 50%);
+}
+
+body.night-theme .extensions-bar {
+    background-color: hsl(226, 25%, 17%);
+}
+
+body.night-theme .remove,
+body.night-theme .options,
+body.night-theme .selections button {
+    background-color: hsl(226, 25%, 17%);
+    color: white;
+    border: 1px solid hsl(226, 11%, 50%);
+}
+
+.extensions-bar img {
+    transition: 0.3s;
+}
+
+body.night-theme .extensions-bar img {
+    filter: brightness(0) invert(1);
+}
+
+.selections .active,
+body.night-theme .selections .active,
+.remove.active,
+body.night-theme .remove.active {
+    background-color: hsl(3, 77%, 44%);
+    color: hsl(200, 60%, 99%);
+}
+
+@media (min-width: 1024px) {
+    .extensions {
+        width: 100%;
+        max-width: 1290px;
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 0;
+        gap: 20px;
+        border-radius: 20px;
+    }
+
+    .main-container {
+        width: 100%;
+        max-width: 1330px;
+        margin: 0 auto;
+        display: grid;
+        gap: 20px;
+        grid-template-columns: repeat(3, 425px);
+        grid-template-rows: repeat(3, auto);
+    }
+
+    .selection-bar {
+        flex-direction: row;
+        width: 100%;
+        justify-content: space-between;
+        margin: 30px 0px 20px 0px;
+    }
 }
